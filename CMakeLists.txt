@@ -4,6 +4,7 @@ project(macro_calculator)
 # Our Project
 set(SOURCE_FILES
     main.cpp
+    User.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})

@@ -1,9 +1,10 @@
 #include "User.h"
+#include <string>
 #include <iostream>
 #include <limits>
 
   // Private Constructor
-  User::User(int weight, int height, int weeklyActivity, int age,  int goal) : weight(weight), height(height), weeklyActivity(weeklyActivity), age(age), goal(goal) {}
+  User::User(int weight, int height, string weeklyActivity, int age,  string goal) : weight(weight), height(height), weeklyActivity(weeklyActivity), age(age), goal(goal) {}
 
 
   // caclulateActivityModifier
@@ -21,7 +22,11 @@
 
   // static method to instantiate User based on input.
   User User::createUser() {
-    int weight, height, weeklyActivity, age, goal;
+    int weight;
+    int height;
+    string weeklyActivity;
+    int age;
+    string goal;
 
     // To do abstract all stdin logic to main.
     // Single responsibility pattern
