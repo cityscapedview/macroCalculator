@@ -9,20 +9,22 @@ private:
   // private member variables
   int weight;
   int height;
-  string weeklyActivity;
+  int weeklyActivity;
   int age;
-  string goal;
+  int goal;
   int protein;
   int carbs;
   int fat;
   int calories;
 
   // Private construcor
-  User(int weight, int height, string weeklyActivity, int age,  string goal);
+  User(int weight, int height, int weeklyActivity, int age,  int goal);
 
 
 public:
   static User createUser();
+
+  void abeek() const;
 
 };
 
