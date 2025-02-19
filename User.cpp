@@ -23,11 +23,6 @@
     privateVariable = userInput;
   }
 
-  // Public method to get private variable value.
-  int User::getPrivateVariable(string privateVariable) {
-    return weight;
-  }
-
   // Public method to set private weight value.
   void User::setWeight(int userInput) {
     weight = userInput;
@@ -50,6 +45,11 @@
   // Public method to set goal value.
   void User::setGoal(int userInput) {
     height = userInput;
+  }
+
+  // Public method to get private variable value.
+  int User::getPrivateVariable(string privateVariable) {
+    return weight;
   }
 
   // Public method to get private weight value.

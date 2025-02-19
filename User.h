@@ -28,9 +28,6 @@ public:
   // Public method to set private variable.
   void setPrivateVariable(string privateVariable, int userInput);
 
-  // Public method to get private variable value.
-  int getPrivateVariable(string privateVariable);
-
   // Public method to set private weight value.
   void setWeight(int userInput);
 
@@ -45,6 +42,9 @@ public:
 
   // Public method to set goal value.
   void setGoal(int userInput);
+
+  // Public method to get private variable value.
+  int getPrivateVariable(string privateVariable);
 
   // Public method to get private weight value.
   int getWeight();
