@@ -18,17 +18,66 @@
 
   // caclulateMacroGoal
 
-  // public method to state abeek;
-  void User::abeek() const {
-    std::cout << "Abeek\n";
+  // Public method to set private variable.
+  void User::setPrivateVariable(string privateVariable, int userInput) {
+    privateVariable = userInput;
   }
 
-  // public method to set weight
+  // Public method to get private variable value.
+  int User::getPrivateVariable(string privateVariable) {
+    return weight;
+  }
 
+  // Public method to set private weight value.
+  void User::setWeight(int userInput) {
+    weight = userInput;
+  }
 
-  // public method to display weight
+  // Public method to set private height value.
+  void User::setHeight(int userInput) {
+    height = userInput;
+  }
 
-  // static method to instantiate User based on input.
+  // Public method to set private weekly activity value.
+  void User::setWeeklyActivity(int userInput) {
+    height = userInput;
+  }
+  // Public method to set private age value.
+  void User::setAge(int userInput) {
+    height = userInput;
+  }
+
+  // Public method to set goal value.
+  void User::setGoal(int userInput) {
+    height = userInput;
+  }
+
+  // Public method to get private weight value.
+  int User::getWeight() {
+    return weight;
+  }
+
+  // Public method to get private height value.
+  int User::getHeight() {
+    return weight;
+  }
+
+  // Public method to get private weekly activity value.
+  int User::getWeeklyActivity() {
+    return weight;
+  }
+
+  // Public method to get private age value.
+  int User::getAge() {
+    return weight;
+  }
+
+  // Public method to get private goal value.
+  int User::getGoal() {
+    return weight;
+  }
+
+  // Static method to instantiate user based on input.
   User User::createUser() {
     int weight;
     int height;

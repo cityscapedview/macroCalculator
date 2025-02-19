@@ -21,64 +21,48 @@ int main()
   int goal;
 
   User user = User::createUser();
-  user.abeek();
 
   std::cout << "Welcome to the MacroCalculator, please answer the following questions to recieve your macro goals!";
 
   // Ask for weight
   std::cout << "Enter weight (in lbs): ";
-  while (!(std::cin >> weight) || weight <= 0) {
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cout << "Invalid input. Please enter a valid weight (postitive number): ";
-  }
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::cin >> weight;
+  user.setWeight(weight);
+  std::cout << "Your Entered Weight:" << user.getWeight() << std::endl;
 
   // Ask for height
   std::cout << "Enter your height (in inches): ";
-  while (!(std::cin >> height) || height <= 0) {
-      std::cin.clear();
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-      std::cout << "Invalid input. Please enter a valid height (positive number): ";
-  }
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::cin >> height;
+  user.setHeight(height);
+  std::cout << "Your Entered Height:" << user.getHeight() << std::endl;
 
   // Ask for age
   std::cout << "Enter your age: ";
-  while (!(std::cin >> age) || age <= 0) {
-      std::cin.clear();
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-      std::cout << "Invalid input. Please enter a valid age (positive integer): ";
-  }
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::cin >> age;
+  user.setAge(age);
+  std::cout << "Your Entered Age:" << user.getAge() << std::endl;
 
   // Ask for weekly activity level
   std::cout << "Enter your weekly activity level (e.g., sedentary, moderate, active): ";
-  while (!(std::cin >> weeklyActivity) || weeklyActivity <= 0) {
-      std::cin.clear();
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-      std::cout << "Invalid input. Please enter a valid age (positive integer): ";
-  }
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::cin >> weeklyActivity;
+  user.setWeeklyActivity(weeklyActivity);
+  std::cout << "Your Entered Height:" << user.getWeeklyActivity() << std::endl;
 
   // Ask for goal
   std::cout << "Enter your goal (e.g., lose weight, gain muscle, maintain): ";
-  while (!(std::cin >> goal) || goal <= 0) {
-      std::cin.clear();
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-      std::cout << "Invalid input. Please enter a valid age (positive integer): ";
-  }
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::cin >> goal;
+  user.setGoal(goal);
+  std::cout << "Your Entered Goal:" << user.getGoal() << std::endl;
 
   // Maybe add a display and ask if this is correct, if not they start again
 
   // Display the summary
   std::cout << "\n--- Health Information Summary ---\n";
-  std::cout << "Weight: " << weight << " kg\n";
-  std::cout << "Height: " << height << " cm\n";
-  std::cout << "Age: " << age << " years\n";
-  std::cout << "Weekly Activity Level: " << weeklyActivity << "\n";
-  std::cout << "Goal: " << goal << "\n";
+  std::cout << "Weight: " << user.getWeight() << " kg\n";
+  std::cout << "Height: " << user.getHeight() << " cm\n";
+  std::cout << "Age: " << user.getAge() << " years\n";
+  std::cout << "Weekly Activity Level: " << user.getWeeklyActivity() << "\n";
+  std::cout << "Goal: " << user.getGoal() << "\n";
 
   return 0;
 }

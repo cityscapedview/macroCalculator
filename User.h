@@ -6,7 +6,7 @@ using namespace std;
 
 class User {
 private:
-  // private member variables
+  // Private member variables
   int weight;
   int height;
   int weeklyActivity;
@@ -22,9 +22,44 @@ private:
 
 
 public:
+  // Static method to instantiate user based on input.
   static User createUser();
 
-  void abeek() const;
+  // Public method to set private variable.
+  void setPrivateVariable(string privateVariable, int userInput);
+
+  // Public method to get private variable value.
+  int getPrivateVariable(string privateVariable);
+
+  // Public method to set private weight value.
+  void setWeight(int userInput);
+
+  // Public method to set private height value.
+  void setHeight(int userInput);
+
+  // Public method to set private weekly activity value.
+  void setWeeklyActivity(int userInput);
+
+  // Public method to set private age value.
+  void setAge(int userInput);
+
+  // Public method to set goal value.
+  void setGoal(int userInput);
+
+  // Public method to get private weight value.
+  int getWeight();
+
+  // Public method to get private height value.
+  int getHeight();
+
+  // Public method to get private weekly activity value.
+  int getWeeklyActivity();
+
+  // Public method to get private age value.
+  int getAge();
+
+  // Public method to get private goal value.
+  int getGoal();
 
 };
 
