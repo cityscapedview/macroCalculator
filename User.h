@@ -56,6 +56,9 @@ public:
   // Public method to set private age value.
   void setAge(int userInput);
 
+  // Public method to set private age value.
+  void setGender(int userInput);
+
   // Public method to set goal value.
   void setGoal(int userInput);
 
@@ -74,11 +77,16 @@ public:
   // Public method to get private age value.
   int getAge();
 
+  // Public method to get private age value.
+  int getGender();
+
   // Public method to get private goal value.
   int getGoal();
 
+  // Public Method to calculate and set private variables: protein, fat, and carbs;
   void calculateCaloricGoal();
 
+  // Static method to instantiate user based on input.
   void calculateMacros();
 
 };

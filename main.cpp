@@ -6,10 +6,10 @@
 // TODO:
 // - [ ] Abstract all std in & out to main.cpp class for now. (can refactor later).
 // - [ ] Try and reduce double state.
-// - [ ] Instantiate user on startup.
 // - [ ] Use setters to set data with try and catch logic in users
 // - [ ] Handle all business logic in Users
-// - [ ] Finish populating functions for calculating.
+// - [ ] Look up and Add single unit testing in cpp for this app.
+// - [ ] Look up and see if there is a way to export results to a excel spread.
 
 
 int main()
@@ -17,6 +17,7 @@ int main()
   int weight;
   int height;
   int age;
+  int gender;
   int weeklyActivity;
   int goal;
 
@@ -47,6 +48,12 @@ int main()
   std::cin >> weeklyActivity;
   user.setWeeklyActivity(weeklyActivity);
   std::cout << "Your Entered Height:" << user.getWeeklyActivity() << std::endl;
+
+  // Enter your gender
+  std::cout << "Enter your gender (e.g., male): ";
+  std::cin >> gender;
+  user.setGender(gender);
+  std::cout << "Your Entered Gender:" << user.getGender() << std::endl;
 
   // Ask for goal
   std::cout << "Enter your goal (e.g., lose weight, gain muscle, maintain): ";
