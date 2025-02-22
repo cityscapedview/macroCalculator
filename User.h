@@ -11,6 +11,7 @@ private:
   int height;
   int weeklyActivity;
   int age;
+  int gender;
   int goal;
   int protein;
   int carbs;
@@ -18,8 +19,23 @@ private:
   int calories;
 
   // Private construcor
-  User(int weight, int height, int weeklyActivity, int age,  int goal);
+  User(int weight, int height, int weeklyActivity, int age, int gender, int goal, int protein, int carbs, int fat, int calories);
 
+
+  // Private method that calculates activity coefficient.
+  int calculateActivityCoefficient(int weeklyActivity);
+
+  // Private method that converts pounds to kilograms.
+  int convertPoundsToKilograms(int pounds);
+
+  // Private method that converts inches to centimeters.
+  int convertInchesToCentimeters(int inches);
+
+  // Private method that calculates gender coefficient.
+  int calculateGenderCoefficient(int gender);
+
+  // Private method that calculates goal coefficient.
+  int calculateGoalCoefficient(int goal);
 
 public:
   // Static method to instantiate user based on input.
@@ -60,6 +76,10 @@ public:
 
   // Public method to get private goal value.
   int getGoal();
+
+  void calculateCaloricGoal();
+
+  void calculateMacros();
 
 };
 

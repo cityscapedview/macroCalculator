@@ -2,21 +2,65 @@
 #include <string>
 #include <iostream>
 #include <limits>
+#include <cmath>
 
   // Private Constructor
-  User::User(int weight, int height, int weeklyActivity, int age,  int goal) : weight(weight), height(height), weeklyActivity(weeklyActivity), age(age), goal(goal) {}
+  User::User(int weight, int height, int weeklyActivity, int age, int gender, int goal, int protein, int carbs, int fat, int calories) : weight(weight), height(height), weeklyActivity(weeklyActivity), age(age), gender(gender), goal(goal), protein(protein), carbs(carbs), fat(fat), calories(calories) {}
 
-  // caclulateActivityModifier
+  // Private method that calculates activity coefficient.
+  int User::calculateActivityCoefficient(int weeklyActivity) {
+    switch (weeklyActivity) {
+      // sedentary
+      case 1:
+        return 1.2;
+      // light activity
+      case 2:
+        return 1.375;
+      // moderate activity
+      case 3:
+        return 1.55;
+      // very active
+      case 4:
+        return 1.725;
+    }
+  }
 
-  // convertPoundsToKilograms
+  // Private method that converts pounds to kilograms.
+  int User::convertPoundsToKilograms(int pounds) {
+    return pounds / 2.205;
+  }
 
-  // calculateGenderModifier
+  // Private method that converts inches to centimeters.
+  int User::convertInchesToCentimeters(int inches) {
+    return inches * 2.54;
+  }
 
-  // calculateGenderModifier
+  // Private method that calculates gender coefficient.
+  int User::calculateGenderCoefficient(int gender) {
+    switch (gender) {
+      // male
+      case 1:
+        return 5;
+      // female
+      case 2:
+        return -161;
+    }
+  }
 
-  // calculateCaloricGoal
-
-  // caclulateMacroGoal
+  // Private method that calculates goal coefficient.
+  int User::calculateGoalCoefficient(int goal) {
+    switch (goal) {
+      // gain
+      case 1:
+        return 1.15;
+      // maintain
+      case 2:
+        return 1;
+      // cut
+      case 3:
+        return .8;
+    }
+  }
 
   // Public method to set private variable.
   void User::setPrivateVariable(string privateVariable, int userInput) {
@@ -77,6 +121,24 @@
     return weight;
   }
 
+  // Public Method that calculates user's caloric goal.
+  void User::calculateCaloricGoal() {
+    int userWeight = convertPoundsToKilograms(weight);
+    int userHeight = convertInchesToCentimeters(height);
+    int genderCoefficient = calculateGenderCoefficient(gender);
+    int activityCoefficient = calculateActivityCoefficient(weeklyActivity);
+    int goalCoefficient = calculateGoalCoefficient(goal);
+
+    calories = std::round((((10 * userWeight + 6.25 * userHeight -5 * age + genderCoefficient) * activityCoefficient)) * goalCoefficient);
+  }
+
+  // Public Method to calculate and set private variables: protein, fat, and carbs;
+  void User::calculateMacros() {
+    protein = std::round(weight);
+    fat = std::round(weight * 0.4);
+    carbs = std::round((protein * 4 + fat * 9) / 4);
+  }
+
   // Static method to instantiate user based on input.
   User User::createUser() {
     int weight;
@@ -84,8 +146,13 @@
     int weeklyActivity;
     int age;
     int goal;
+    int gender;
+    int protein;
+    int carbs;
+    int fat;
+    int calories;
 
-    return User(weight, height, weeklyActivity, age, goal);
+    return User(weight, height, weeklyActivity, age, gender, goal, protein, carbs, fat, calories);
   }
 
   // Display goals
